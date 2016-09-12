@@ -1,4 +1,4 @@
-# KataPokerHands
+# Kata Poker Hands
 
 [![Build Status](https://api.travis-ci.org/xingxing/kata_poker_hands.svg)](https://travis-ci.org/xingxing/kata_poker_hands)
 
