@@ -1,21 +1,20 @@
 defmodule PokerTest do
   use ExUnit.Case
-  doctest Poker
 
-  import Poker
+  import Poker.PokerHands
 
   test "convert cards to sortable format" do
-    assert Poker.convert_to_sortable("TH AH QH KH JH") == ":H >H <H =H ;H"
+    assert convert_to_sortable("TH AH QH KH JH") == ":H >H <H =H ;H"
   end
 
   test "sort" do
-    assert Poker.sort("2H 2D 2S KD 2C") == "2C 2D 2H 2S =D"
+    assert sort("2H 2D 2S KD 2C") == "2C 2D 2H 2S =D"
 
     assert_raise RuntimeError, "incorrect cards", fn -> 
-      Poker.sort("wrong cards")
+      sort("wrong cards")
     end
 
-    assert Poker.sort("KS 2H 4C 9D AC") == "2H 4C 9D =S >C"
+    assert sort("KS 2H 4C 9D AC") == "2H 4C 9D =S >C"
   end
 
   test "is straight flush" do
@@ -94,6 +93,7 @@ defmodule PokerTest do
 
   test "main" do
     assert main("Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C AH") == "White wins.- with high_card: Ace"
+    assert main("邢星: 2H 3D 5S 9C KD XingXing: 2C 3H 4S 8C AH") == "XingXing wins.- with high_card: Ace"
     assert main("Black: 2H 4S 4C 2D 4H White: 2S 8S AS QS 3S") == "Black wins.- with full_house"
     assert main("Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C KH") == "Black wins.- with high_card: 9"
     assert main("Black: 2H 3D 5S 9C KD White: 2D 3H 5C 9S KH") == "Tie."

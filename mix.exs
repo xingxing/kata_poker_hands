@@ -14,7 +14,9 @@ defmodule Poker.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger],
+     mod: {Poker, []}
+    ]
   end
 
   # Dependencies can be Hex packages:
