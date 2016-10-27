@@ -2,6 +2,8 @@
 
 [![Build Status](https://api.travis-ci.org/xingxing/kata_poker_hands.svg)](https://travis-ci.org/xingxing/kata_poker_hands)
 
+[![Build Status](https://semaphoreci.com/api/v1/wadexing/kata_poker_hands-2/branches/master/badge.svg)](https://semaphoreci.com/wadexing/kata_poker_hands-2)
+
 ## About this Kata
 This kata is blatantly stolen from acm.uva.es/p/v103/10315.html It is a subset of KataTexasHoldEm, which is a very large Kata.
 
